@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anu Instagram Photo Feed with Bootsrap Anu</title>
-    <link rel="stylesheet" href="styles.css" />
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,6 +16,7 @@
       src="https://kit.fontawesome.com/9315e45218.js"
       crossorigin="anonymous"
     ></script>
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -24,71 +25,86 @@
     />
   </head>
   <body>
-    <!--Nav Tab javascript bootstrap Pills-->
-    <!-- <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button
-          class="nav-link active"
-          id="pills-home-tab"
-          data-bs-toggle="pill"
-          data-bs-target="#pills-home"
-          type="button"
-          role="tab"
-          aria-controls="pills-home"
-          aria-selected="true"
-        >
-          Home
-        </button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button
-          class="nav-link"
-          id="pills-profile-tab"
-          data-bs-toggle="pill"
-          data-bs-target="#pills-profile"
-          type="button"
-          role="tab"
-          aria-controls="pills-profile"
-          aria-selected="false"
-        >
-          Profile
-        </button>
-      </li>
-    </ul>
-
-    content of each tab goes below this
-    <div class="tab-content" id="pills-tabContent">
-      <div
-        class="tab-pane fade show active"
-        id="pills-home"
-        role="tabpanel"
-        aria-labelledby="pills-home-tab"
-        tabindex="0"
-      >
-        ..You are in HOME Tab.
-      </div>
-      <div
-        class="tab-pane fade"
-        id="pills-profile"
-        role="tabpanel"
-        aria-labelledby="pills-profile-tab"
-        tabindex="0"
-      >
-        .You are in profile Tab..
-      </div>
-    </div> -->
-
     <div class="container mt-1" id="Instragram-Feed-Bootstrap">
-      <div class="d-flex title-div">
+      <div class="d-flex title-div bg-body-secondary p-3">
         <div class="d-flex">
-          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-instagram me-1 mt-1"></i>
           <h5 class="fs-8 fw-bold">Instragram</h5>
         </div>
 
-        <div>
-          <button type="button" class="btn btn-success">
+        <div class="ms-auto">
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="btn btn-success"
+            data-bs-toggle="modal"
+            data-bs-target="#CreateNewModal"
+          >
             Create a New Post
           </button>
+
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="CreateNewModal"
+            tabindex="-1"
+            aria-labelledby="CreateNewModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5 text" id="CreateNewModalLabel">
+                    Create a new post
+                  </h1>
+
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <div class="form-floating">
+                    <h5 class="pb-1 fs-6 text">Caption:</h5>
+                    <textarea
+                      class="pt-2 ps-3"
+                      rows="2"
+                      cols="60"
+                      placeholder="Add the caption of your post here"
+                    ></textarea>
+                    <div class="mt-2">
+                      <button
+                        type="button"
+                        class="btn btn-light border me-1"
+                        style="padding: 3px 6px"
+                      >
+                        <i class="fa-solid fa-camera"></i>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-light border"
+                        style="padding: 3px 8px"
+                      >
+                        <i class="fa-solid fa-location-dot"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="button" class="btn btn-success">Publish</button>
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- Example single danger button -->
           <div class="btn-group">
             <button
@@ -104,33 +120,444 @@
               <li><a class="dropdown-item" href="#">Accessibility</a></li>
               <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
               <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item " href="#" style="
-    color:  red;
-">Log Out</a></li>
+              <li>
+                <a class="dropdown-item" href="#" style="color: red">Log Out</a>
+              </li>
             </ul>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-4"></div>
-        <div class="col-4">
-                  </div>
+        <div class="col-1"></div>
+        <div class="col-10">
+          <div style="justify-items: center">
+            <ul class="nav nav-pills" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="pills-grid-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-grid"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-grid"
+                  aria-selected="true"
+                >
+                  <i class="fa-solid fa-table-cells"></i>
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="pills-single-column-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-single-column"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-single-column-tab"
+                  aria-selected="false"
+                >
+                  <i class="fa-solid fa-square"></i>
+                </button>
+              </li>
+            </ul>
+          </div>
 
-        <div class="col-4"></div>
+          <div
+            class="tab-content"
+            id="pills-tabContent"
+            style="display: grid; justify-items: center"
+          >
+            <div
+              class="tab-pane fade show active"
+              id="pills-grid"
+              role="tabpanel"
+              aria-labelledby="pills-grid-tab"
+              tabindex="0"
+            >
+              <div id="gridTab">
+                <div class="d-flex flex-row">
+                  <div class="card col-4" style="height: 250px; width: 250px">
+                    <img
+                      class="h-250 w-250 p-2"
+                      src="https://picsum.photos/200
+"
+                      class="card-img-top"
+                      alt=".1."
+                    />
+                    <!-- <div class="card-body">
+                      <h5 class="card-title">Card title1</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the cards content.
+                      </p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div> -->
+                  </div>
+                  <div
+                    class="col-4 card p-2"
+                    style="height: 250px; width: 250px"
+                  >
+                    <img
+                      class="h-100 w-100"
+                      src="https://picsum.photos/id/237/200
+"
+                      class="card-img-top"
+                      alt=".2."
+                    />
+                    <!-- <div class="card-body">
+                      <h5 class="card-title">Card title2</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the cards content.
+                      </p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div> -->
+                  </div>
+                  <div
+                    class="col-4 card p-2"
+                    style="height: 250px; width: 250px"
+                  >
+                    <img
+                      class="h-100 w-100"
+                      src="https://picsum.photos/seed/picsum/200"
+                      class="card-img-top"
+                      alt=".3."
+                    />
+                    <!-- <div class="card-body">
+                      <h5 class="card-title">Card title3</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the cards content.
+                      </p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="d-flex flex-row">
+                  <div
+                    class="card col-4 p-2"
+                    style="height: 250px; width: 250px"
+                  >
+                    <img
+                      class="h-100 w-100"
+                      src="https://picsum.photos/200/300.webp"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <!-- <div class="card-body">
+                      <h5 class="card-title">Card title1</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the cards content.
+                      </p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div> -->
+                  </div>
+                  <div
+                    class="col-4 card p-2"
+                    style="height: 250px; width: 250px"
+                  >
+                    <img
+                      class="h-100 w-100"
+                      class="h-100"
+                      src="https://media.istockphoto.com/id/1370162833/photo/abstract-blur-lobby-interior-for-background.jpg?s=612x612&w=0&k=20&c=49val68YZInJsuU7YH2d-W1xipN40P3AuE_KXB4XnKE="
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <!-- <div class="card-body">
+                      <h5 class="card-title">Card title2</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the cards content.
+                      </p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div> -->
+                  </div>
+                  <div
+                    class="col-4 card p-2"
+                    style="height: 250px; width: 250px"
+                  >
+                    <img
+                      class="h-100 w-100"
+                      src="https://media.istockphoto.com/id/157196438/photo/hydrangea.jpg?s=612x612&w=is&k=20&c=NHzxigFOVHeugS1Es7Uya3Q0CdenKc4_w3qmso8sTC8="
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <!-- <div class="card-body">
+                      <h5 class="card-title">Card title3</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the cards content.
+                      </p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="d-flex flex-row">
+                  <div
+                    class="card col-4 p-2"
+                    style="height: 250px; width: 250px"
+                  >
+                    <img
+                      class="h-100 w-100"
+                      src="https://cdn.pixabay.com/photo/2025/11/06/19/05/hydrangea-9941409_1280.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <!-- <div class="card-body">
+                      <h5 class="card-title">Card title1</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the cards content.
+                      </p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div> -->
+                  </div>
+                  <div
+                    class="col-4 card p-2"
+                    style="height: 250px; width: 250px"
+                  >
+                    <img
+                      class="h-100 w-100"
+                      src="https://media.istockphoto.com/id/157196438/photo/hydrangea.jpg?s=612x612&w=is&k=20&c=NHzxigFOVHeugS1Es7Uya3Q0CdenKc4_w3qmso8sTC8="
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <!-- <div class="card-body">
+                      <h5 class="card-title">Card title2</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the cards content.
+                      </p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div> -->
+                  </div>
+                  <div
+                    class="col-4 card p-2"
+                    style="height: 250px; width: 250px"
+                  >
+                    <img
+                      class="h-100 w-100"
+                      src="https://cdn.pixabay.com/photo/2021/09/07/20/27/woman-6604886_640.jpg"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <!-- <div class="card-body">
+                      <h5 class="card-title">Card title3</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the cards content.
+                      </p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- single column data -->
+            <div
+              class="tab-pane fade"
+              id="pills-single-column"
+              role="tabpanel"
+              aria-labelledby="pills-single-column-tab"
+              tabindex="0"
+            >
+              <div id="single-ColumnTab">
+                <div
+                  class="flex-column"
+                  style="display: grid; justify-items: center"
+                >
+                  <div class="card col-4 m-2 w-75">
+                    <div class="d-flex">
+                      <h6 class="fs-5 text p-2">Elephant!</h6>
+                      <h5 class="ms-auto fs-6 text">08/20</h5>
+                    </div>
+                    <img
+                      src="https://cdn.pixabay.com/photo/2016/06/16/08/11/elephant-1460836_640.jpg
+"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body ps-0 ms-2 mb-0">
+                      <p class="fw-bold m-0">205 Likes</p>
+                      <p class="card-text p-0">
+                        This is an example of a very good photo that you can
+                        post about elephants.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-4 card m-2">
+                    <img
+                      src="https://cdn.pixabay.com/photo/2018/09/03/12/01/masjid-3651071_640.jpg
+"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <!-- <div class="card-body">
+                      <h5 class="card-title">Card title2</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the cards content.
+                      </p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div> -->
+                  </div>
+                  <div class="col-4 card m-2">
+                    <img
+                      src="https://cdn.pixabay.com/photo/2016/06/16/05/01/sea-anemone-1460662_640.jpg
+"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <!-- <div class="card-body">
+                      <h5 class="card-title">Card title3</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the cards content.
+                      </p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div> -->
+                  </div>
+                  <div class="card col-4 m-2">
+                    <img
+                      src="https://cdn.pixabay.com/photo/2016/12/23/19/19/pan-1927783_640.jpg
+"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <!-- <div class="card-body">
+                      <h5 class="card-title">Card title1</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the cards content.
+                      </p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div> -->
+                  </div>
+                  <div class="card col-4 m-2">
+                    <img
+                      src="https://cdn.pixabay.com/photo/2016/07/26/23/06/red-apple-1544181_640.jpg
+"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <!-- <div class="card-body">
+                      <h5 class="card-title">Card title1</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the cards content.
+                      </p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div> -->
+                  </div>
+                  <div class="card col-4 m-2">
+                    <img
+                      src="https://cdn.pixabay.com/photo/2022/08/24/05/44/duck-7406987_640.jpg
+"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <!-- <div class="card-body">
+                      <h5 class="card-title">Card title1</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the cards content.
+                      </p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div> -->
+                  </div>
+                  <div class="card col-4 m-2">
+                    <img
+                      src="https://cdn.pixabay.com/photo/2019/02/19/15/22/horse-4006998_640.jpg
+"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <!-- <div class="card-body">
+                      <h5 class="card-title">Card title1</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the cards content.
+                      </p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div> -->
+                  </div>
+                  <div class="card col-4">
+                    <img
+                      src="https://cdn.pixabay.com/photo/2017/06/26/20/36/palm-2445107_640.jpg
+"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <!-- <div class="card-body">
+                      <h5 class="card-title">Card title1</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the cards content.
+                      </p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div> -->
+                  </div>
+                  <div class="card col-4">
+                    <img
+                      src="https://cdn.pixabay.com/photo/2015/05/31/15/14/woman-792162_640.jpg
+"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <!-- <div class="card-body">
+                      <h5 class="card-title">Card title1</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the cards content.
+                      </p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div> -->
+                  </div>
+                  <div class="card col-4">
+                    <img
+                      src="https://cdn.pixabay.com/photo/2015/04/20/21/39/balloons-732290_640.jpg
+"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <!-- <div class="card-body">
+                      <h5 class="card-title">Card title1</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the cards content.
+                      </p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div> -->
+                  </div>
+                  <div class="card col-4">
+                    <img
+                      src="https://cdn.pixabay.com/photo/2021/07/17/11/45/stamens-6472927_640.jpg
+"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <!-- <div class="card-body">
+                      <h5 class="card-title">Card title1</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the cards content.
+                      </p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-1"></div>
       </div>
     </div>
-
-    <!-- <div class="card  mt-1" style="width:450px ;height:650px">
-      <img src="..." class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Instagram</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the cards content.
-        </p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div> -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
